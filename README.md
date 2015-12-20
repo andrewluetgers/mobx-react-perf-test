@@ -27,5 +27,5 @@ This test was initially developed for improving [Omniscinet](http://omniscientjs
  
 ## Cross Browser Performance Bug
 There are some issues related to this specific perf test filed against [Firefox #1220429](https://bugzilla.mozilla.org/show_bug.cgi?id=1220429)
- and [Chromium #550044](https://code.google.com/p/chromium/issues/detail?id=550044) which register much lower frame-rates (~40)
- than Safari (~118). This appears to be a problem related to specifics of how the various graphics pipelines are implemented in these browsers. For fair comparisons across browsers make sure the entire table is visible.
+ and [Chromium #550044](https://code.google.com/p/chromium/issues/detail?id=550044) which register much lower frame-rates (~30 fps)
+ than Safari (~200 fps). This appears to be a problem related to specifics of how the various graphics pipelines are implemented in these browsers. For fair comparisons across browsers make sure the entire table is visible.
