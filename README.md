@@ -14,11 +14,12 @@ You can start or stop the process and pick different sizes for the grid. Which a
 
 The 100 x 100 grid is the main show here and illustrates weather or not the change observation, subscription and rendering mechanisms all scale well or not.
  
-# Compare against raw js and Omnistate
+# Other Implementations
 This test was initially developed for improving [Omniscinet](http://omniscientjs.github.io/) via [Immstruct PR #56](https://github.com/omniscientjs/immstruct/pull/56)
  that work also lead into the development of [Omnistate](https://github.com/andrewluetgers/omnistate) which is very similar in philosophy though not syntax to Mobservable.
- It has also been implemented in raw js.
-
+ The Mobservable and Omnistate examples show very similar performance (~118 fps) these test implementations are implemented with very similar code. 
+ A vanilla-js implementation is coming soon.
+ 
 ## Cross Browser Performance Bug
 There are some issues related to this specific perf test filed against [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1220429)
  and [Chrome](https://code.google.com/p/chromium/issues/detail?id=550044) which register much lower frame-rates (~40)
