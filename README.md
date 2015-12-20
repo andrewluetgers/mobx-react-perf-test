@@ -22,8 +22,8 @@ The 100 x 100 grid is the main show here and illustrates weather or not the chan
 This test was initially developed for improving [Omniscinet](http://omniscientjs.github.io/) via [Immstruct PR #56](https://github.com/omniscientjs/immstruct/pull/56)
  that work also lead into the development of [Omnistate](https://github.com/andrewluetgers/omnistate) which is very similar in philosophy though not syntax to Mobservable.
  The Mobservable and Omnistate examples show very similar performance (~118 fps) these test implementations are implemented with very similar code. 
- A [vanilla-js implementation (212 fps)](http://jsfiddle.net/zme8f7k8/5/) is also available .
- FPS numbers under safari on the same machine for more on varience.
+ A [vanilla-js implementation (212 fps)](http://jsfiddle.net/zme8f7k8/5/) is also available.
+ FPS numbers all under Safari on the same machine.
  
 ## Cross Browser Performance Bug
 There are some issues related to this specific perf test filed against [Firefox #1220429](https://bugzilla.mozilla.org/show_bug.cgi?id=1220429)
