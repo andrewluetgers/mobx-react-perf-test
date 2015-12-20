@@ -1,7 +1,10 @@
 # mobservable-react-perf-test
 a simple perf test using mobservable
 
-## run it
+<img width="504" alt="screen shot 2015-12-20 at 12 13 18 pm" src="https://cloud.githubusercontent.com/assets/232036/11919264/5ba5634a-a713-11e5-8179-b06030b16dbd.png">
+
+
+## Run It
  ```js
  npm install
  npm start
