@@ -8,6 +8,7 @@ a simple perf test using mobservable
  ```js
  npm install
  npm start
+ open http://localhost:3000
  ```
 ## What is it
 The basic idea here is to exercise the state updating mechanism as much as possible in the context of still updating the view. 
