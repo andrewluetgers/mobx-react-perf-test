@@ -58,6 +58,7 @@ export default class Alpha extends Component {
 					<button onClick={()=> alphaState.newLayout(5, 10)}>5x10</button>
 					<button onClick={()=> alphaState.newLayout(10, 10)}>10x10</button>
 					<button onClick={()=> alphaState.newLayout(100, 100)}>100x100</button>
+					<input type="text" value={alpha.updatesPerFrame} onChange={(e)=>this.handleUpdatesChange(e)} />
 				</div>
 				<button onClick={this.start}>Start</button>
 				<button onClick={this.stop}>Stop</button>
@@ -83,7 +84,7 @@ export default class Alpha extends Component {
 			stats.end();
 			stats.begin();
 
-			for (var i=0; i<3; i++) {
+			for (var i=0; i<alpha.updatesPerFrame; i++) {
 				alphaState.toggleRandomCell(alpha.width, alpha.height);
 			}
 
@@ -108,11 +109,16 @@ export default class Alpha extends Component {
 	};
 
 	fill = ()=> {
-		alphaState.fillTheTable(alpha.width, alpha.height);
+		alphaState.fillTheTable(state.alpha.width, state.alpha.height);
 	};
 
 	clear = ()=> {
-		alphaState.clearTheTable(alpha.width, alpha.height);
+		alphaState.clearTheTable(state.alpha.width, state.alpha.height);
+	};
+
+
+	handleUpdatesChange = (e) => {
+		state.alpha.updatesPerFrame = e.target.value
 	};
 
 	componentWillUnmount = ()=> {

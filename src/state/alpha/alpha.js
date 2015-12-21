@@ -22,6 +22,7 @@ extendObservable(state, {
 		width: 10,
 		height: 10,
 		size: 100,
+		updatesPerFrame: 1,
 		layout: [],
 		run: false,
 		visible: false
