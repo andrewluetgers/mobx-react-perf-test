@@ -1,5 +1,5 @@
 
-import {extendObservable} from "mobservable"
+import {extendObservable, transaction} from "mobx"
 import state from '../state'
 
 var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -33,9 +33,11 @@ extendObservable(state, {
 export default {
 
 	newLayout: function(w, h) {
-		state.alpha.width = w;
-		state.alpha.height = h;
-		state.alpha.layout = this.blankTable(w, h);
+		transaction(() => {
+			state.alpha.width = w;
+			state.alpha.height = h;
+			state.alpha.layout = this.blankTable(w, h);
+		});
 	},
 
 	blankTable: function(w, h) {

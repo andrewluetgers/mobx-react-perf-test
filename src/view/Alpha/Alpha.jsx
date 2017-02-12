@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react'
-import {observer} from 'mobservable-react'
+import {transaction} from 'mobx'
+import {observer} from 'mobx-react'
 import If from '../../common/If/If.jsx'
 import alphaState from '../../state/alpha/alpha'
 import state from '../../state/state'
@@ -53,12 +54,17 @@ export default class Alpha extends Component {
 		return (
 			<div>
 				<div>
+
+					<label>
+						Updates Per Frame
+						<input type="text" value={alpha.updatesPerFrame} onChange={(e)=>this.handleUpdatesChange(e)} />
+					</label>
+					<br/>
 					<button onClick={()=> alphaState.newLayout(5, 5)}>5x5</button>
 					<button onClick={()=> alphaState.newLayout(10, 5)}>10x5</button>
 					<button onClick={()=> alphaState.newLayout(5, 10)}>5x10</button>
 					<button onClick={()=> alphaState.newLayout(10, 10)}>10x10</button>
 					<button onClick={()=> alphaState.newLayout(100, 100)}>100x100</button>
-					<input type="text" value={alpha.updatesPerFrame} onChange={(e)=>this.handleUpdatesChange(e)} />
 				</div>
 				<button onClick={this.start}>Start</button>
 				<button onClick={this.stop}>Stop</button>
@@ -84,10 +90,11 @@ export default class Alpha extends Component {
 			stats.end();
 			stats.begin();
 
-			for (var i=0; i<alpha.updatesPerFrame; i++) {
-				alphaState.toggleRandomCell(alpha.width, alpha.height);
-			}
-
+			transaction(() => {
+				for (var i=0; i<alpha.updatesPerFrame; i++) {
+					alphaState.toggleRandomCell(alpha.width, alpha.height);
+				}
+			});
 			//cleared = !cleared;
 			//cleared
 			//	? alphaState.clearTheTable()

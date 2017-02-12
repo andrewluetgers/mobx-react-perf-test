@@ -1,6 +1,4 @@
 
-import {observable} from 'mobservable'
+import {observable} from 'mobx'
 
-export default observable({
-
-});
+export default observable({});

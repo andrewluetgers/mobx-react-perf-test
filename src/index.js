@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {observable} from 'mobservable';
-import {observer} from 'mobservable-react';
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
 
 import Alpha from './view/Alpha/Alpha.jsx'
-
-// uncomment next line to enable the dev-tools.
-//import 'mobservable-react-devtools';
 
 const appState = observable({});
 
